@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HH88 Scanner & Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #1A1D29;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .app-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 50vh;
+            margin-bottom: 2rem;
+        }
+        .app-image {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .app-image.active {
+            opacity: 1;
+        }
+        .text-content {
+            text-align: left;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .features {
+            margin-bottom: 1.5rem;
+        }
+        .features h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .features p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 响应式设计 */
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .app-image-container {
+                width: 45%;
+                margin-bottom: 0;
+            }
+            .text-content {
+                width: 60%;
+                padding-left: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            h2 {
+                font-size: 2rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="app-image-container">
+                <img src="1.png" alt="" class="app-image active">
+                <img src="2.png" alt="" class="app-image">
+                <img src="3.png" alt="" class="app-image">
+                <img src="4.png" alt="" class="app-image">
+                <img src="5.png" alt="" class="app-image">
+            </div>
+            
+            <div class="text-content">
+                <h2>H<span style="color: red">8</span> QR Code Reader: </h2>
+                <h1>Simple & Quick</h1><a href="mailto:bilalwatchshop@gmail.com"></a>
+                <p class="description">
+                    We provide a solution for all your QR code and barcode tasks. Whether it's scanning or creating codes for text, email, phone numbers, URLs, SMS, and more, The H8 app has you covered. With a thoughtfully crafted interface, it delivers a user-friendly experience that’s both intuitive and aesthetically pleasing. Its streamlined and elegant design ensures that navigating through the app is simple and efficient, with a strong emphasis on usability.
+                </p>
+                
+                <div class="features">
+                    <h3>Key Features:</h3>
+                    <p><strong>1. Qick Scanning</strong><br>
+                        Effortlessly scan any QR or barcode in the fastest and most efficient way possible.
+                    </p>
+                    
+                    <p><strong>2. Code Creation</strong><br>
+                        The H8 QR Code Reader allows you to generate a wide range of codes and keep track of your scan history for future reference.
+                    </p>
+                    
+                    <p><strong>3. No Ads, No Cost
+                    </strong><br>
+                    Completely free to use, without any intrusive ads or distractions.
+                    </p>
+                    
+                    <p><strong>4. Modern Aesthetic
+                    </strong><br>
+                    The app boasts a sleek, minimalistic design that enhances ease of use and overall functionality.
+                    </p>
+                    
+                    <p><strong>5. Seamless Performance
+
+                    </strong><br>
+                    Enjoy smooth and reliable performance every time you use the app, making your scanning tasks quicker and more enjoyable.
+                    </p>
+                </div>
+                
+                <p>Upgrade your scanning experience with H8 QR Code Reader for a refined, hassle-free approach to managing QR codes and barcodes. Download it today and discover the difference firsthand!
+                </p>
+            
+                <span style="color: white; font-size: larger; font-weight: bold;"><a href="mailto:bilalwatchshop@gmail.com">Contract Us</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.app-image');
+        let currentIndex = 0;
+
+        function changeImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(changeImage, 3000); // 每3秒切换一次图片
+    </script>
+</body>
+</html>
